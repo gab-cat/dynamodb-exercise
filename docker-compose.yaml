@@ -8,24 +8,8 @@ services:
       - '3000:3000'
     environment:
       - NODE_ENV=production
-      - DATABASE_URL=postgresql://username:password@postgres:5432/auth_template
-    depends_on:
-      - postgres
+      - DATABASE_URL=sqlite://./db.sqlite
     env_file:
       - .env
-
-  # Database
-  postgres:
-    image: postgres:17-alpine
-    restart: unless-stopped
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_USER: username
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: auth_template
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
+      - ./db.sqlite:/app/db.sqlite
