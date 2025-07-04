@@ -69,7 +69,7 @@ export class UsersController {
 
   @Get()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(Role.STAFF, Role.ADMIN)
+  @Roles(Role.USER, Role.STAFF, Role.ADMIN)
   @ApiOperation({
     summary: 'Get all users (protected)',
     description: `

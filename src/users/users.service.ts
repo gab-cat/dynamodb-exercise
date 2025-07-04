@@ -23,7 +23,7 @@ export class UsersService {
       data: {
         ...data,
         password: await hash(data.password, 10),
-        roles: [Role.USER],
+        roles: Role.USER,
       },
     });
   }
@@ -62,7 +62,7 @@ export class UsersService {
       data: {
         ...data,
         password: await hash(data.password, 10),
-        roles: [Role.USER],
+        roles: Role.USER,
       },
     });
   }
