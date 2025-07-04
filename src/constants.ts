@@ -137,6 +137,7 @@ export function configureSwagger(app: INestApplication): void {
       SWAGGER_TAGS.AUTHENTICATION.description,
     )
     .addTag(SWAGGER_TAGS.USERS.name, SWAGGER_TAGS.USERS.description)
+    .addTag('Inventory', 'Product inventory management endpoints')
     .addCookieAuth(
       COOKIE_AUTH.AUTHENTICATION.name,
       COOKIE_AUTH.AUTHENTICATION.config,
